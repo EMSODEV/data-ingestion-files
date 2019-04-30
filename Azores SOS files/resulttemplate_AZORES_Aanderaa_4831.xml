@@ -4,18 +4,18 @@
         <!-- Before using this example, make sure that all preconditions are fulfilled, 
 			e.g. perform InsertSensor example. -->
         <sos:ResultTemplate>
-            <swes:identifier>0aad2dffcfa3184ce3451f5279512f74_AZORES_2017-7-12</swes:identifier>
+            <swes:identifier>b2f874f299848951080e0683f8c4fd49_AZORES_2017-7-12</swes:identifier>
             <swes:extension>
                 <!-- Identification of the EGIM node where the instrument is deployed  -->
-            <sml:attachedTo xlink:title="EGIM_1" xlink:href="emso.eu:deployment:EGIM_1@AZORES:2017-7-12"/>
+            <sml:attachedTo xlink:title="emso.eu:deployment:EGIM_1:AZORES:2017-7-12" xlink:href="http://www.emso.eu/platform/EGIM"/>
             </swes:extension>
-            <sos:offering>offering_0aad2dffcfa3184ce3451f5279512f74</sos:offering>
+            <sos:offering>offering_b2f874f299848951080e0683f8c4fd49</sos:offering>
             <sos:observationTemplate>
                 <om:OM_Observation gml:id="sensor2obsTemplate">
                     <om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation"/>
                     <om:phenomenonTime nilReason="template"/>
                     <om:resultTime nilReason="template"/>
-                    <om:procedure xlink:href="0aad2dffcfa3184ce3451f5279512f74"/>
+                    <om:procedure xlink:href="b2f874f299848951080e0683f8c4fd49"/>
                     <om:observedProperty xlink:href="aanderaa_4831_observations"/>
                     <om:featureOfInterest>
                         <sams:SF_SpatialSamplingFeature gml:id="AZORES">
