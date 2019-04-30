@@ -4,7 +4,7 @@
 	<swes:procedureDescription>
 		<sml:PhysicalSystem gml:id="Aanderaa_4831_at_AZORES">
 			<!--Unique identifier -->
-			<gml:identifier codeSpace="uniqueID">0aad2dffcfa3184ce3451f5279512f74</gml:identifier>
+			<gml:identifier codeSpace="uniqueID">b2f874f299848951080e0683f8c4fd49</gml:identifier>
 			<sml:identification>
 				<sml:IdentifierList>
 					<sml:identifier>
@@ -40,7 +40,7 @@
 					<sml:identifier>
 						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0007/">
 							<sml:label>UUID</sml:label>
-							<sml:value>0aad2dffcfa3184ce3451f5279512f74</sml:value>
+							<sml:value>b2f874f299848951080e0683f8c4fd49</sml:value>
 						</sml:Term>
 					</sml:identifier>
 				</sml:IdentifierList>
@@ -60,7 +60,7 @@
 					<sml:capability name="offeringID">
 						<swe:Text definition="urn:ogc:def:identifier:OGC:offeringID">
 							<swe:label>Aanderaa 4831 Oxygen measurements</swe:label>
-							<swe:value>offering_0aad2dffcfa3184ce3451f5279512f74</swe:value>
+							<swe:value>offering_b2f874f299848951080e0683f8c4fd49</swe:value>
 						</swe:Text>
 					</sml:capability>
 				</sml:CapabilityList>
@@ -105,7 +105,7 @@
 					</sml:output>
 				</sml:OutputList>
 	    	</sml:outputs>
-	    	<sml:attachedTo xlink:title="emso.eu:deployment:EGIM_1@AZORES:2017-7-12" xlink:href="http://www.emso.eu/site/AZORES"/>
+	    	<sml:attachedTo xlink:title="emso.eu:deployment:EGIM_1:AZORES:2017-7-12" xlink:href="http://www.emso.eu/platform/EGIM"/>
 	        <sml:position>
 	            <swe:Vector referenceFrame="urn:ogc:def:crs:EPSG::4326">
 	                <swe:coordinate name="easting">
