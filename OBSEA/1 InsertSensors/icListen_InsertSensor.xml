@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swes:InsertSensor service="SOS" version="2.0.0"
+	xmlns:swes="http://www.opengis.net/swes/2.0"
+	xmlns:sos="http://www.opengis.net/sos/2.0"
+	xmlns:swe="http://www.opengis.net/swe/2.0"
+	xmlns:sml="http://www.opengis.net/sensorml/2.0"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:gco="http://www.isotc211.org/2005/gco"
+	xmlns:gmd="http://www.isotc211.org/2005/gmd" xsi:schemaLocation="http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sosInsertSensor.xsd   http://www.opengis.net/swes/2.0 http://schemas.opengis.net/swes/2.0/swes.xsd">
+	<swes:procedureDescriptionFormat>http://www.opengis.net/sensorml/2.0</swes:procedureDescriptionFormat>
+	<swes:procedureDescription>
+		<sml:PhysicalSystem gml:id="icListen_Hydrophone_at_OBSEA">
+			<!--Unique identifier -->
+			<gml:identifier codeSpace="uniqueID">250026bd-f33a-4261-aaed-cf0a5e0142bc</gml:identifier>
+			<sml:identification>
+				<sml:IdentifierList>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0006/">
+							<sml:label>shortName</sml:label>
+							<sml:value>icListen Hydrophone</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0002/">
+							<sml:label>longName</sml:label>
+							<sml:value>icListen Hydrophone SB60L-ETH</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0003/">
+							<sml:label>Model name</sml:label>
+							<sml:value>icListen SB60L-ETH</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0012/">
+							<sml:label>Manufacturer</sml:label>
+							<sml:value>Ocean Sonics Ltd.</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0005/">
+							<sml:label>Serial number</sml:label>
+							<sml:value>1636</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0007/">
+							<sml:label>UUID</sml:label>
+							<sml:value>250026bd-f33a-4261-aaed-cf0a5e0142bc</sml:value>
+						</sml:Term>
+					</sml:identifier>
+				</sml:IdentifierList>
+			</sml:identification>
+			<sml:capabilities name="offerings">
+				<sml:CapabilityList>
+					<sml:capability name="offeringID">
+						<swe:Text definition="urn:ogc:def:identifier:OGC:offeringID">
+							<swe:label>icListen acoustic files list</swe:label>
+							<swe:value>offering_250026bd-f33a-4261-aaed-cf0a5e0142bc</swe:value>
+						</swe:Text>
+					</sml:capability>
+				</sml:CapabilityList>
+			</sml:capabilities>	    
+			<sml:outputs>
+				<sml:OutputList>
+					<sml:output name="icListen_spectrum_files_list">                                           
+						<swe:Text definition="icListen_spectrum_files_list">
+							<swe:identifier>TSPF</swe:identifier>
+							<swe:label>icListen spectrum files list</swe:label>
+						</swe:Text>						
+					</sml:output>
+					<sml:output name="icListen_wav_files_list">                                           
+						<swe:Text definition="icListen_wav_files_list">
+							<swe:identifier>TWVF</swe:identifier>
+							<swe:label>icListen wav files list</swe:label>
+						</swe:Text>						
+					</sml:output>						
+				</sml:OutputList>
+	    	</sml:outputs>
+	    	<sml:attachedTo xlink:title= "emso.eu:deployment:EGIM_1:OBSEA:2016-12-01" xlink:href="http://www.emso.eu/site/OBSEA"/>
+	        <sml:position>
+	            <swe:Vector referenceFrame="urn:ogc:def:crs:EPSG::4326">
+	                <swe:coordinate name="easting">
+	                    <swe:Quantity axisID="x">
+	                        <swe:uom code="degree"/>
+	                        <swe:value>1.752567</swe:value>
+	                    </swe:Quantity>
+	                </swe:coordinate>
+	                <swe:coordinate name="northing">
+	                    <swe:Quantity axisID="y">
+	                        <swe:uom code="degree"/>
+	                        <swe:value>41.182117</swe:value>
+	                    </swe:Quantity>
+	                </swe:coordinate>
+	                <swe:coordinate name="altitude">
+	                    <swe:Quantity axisID="z">
+	                        <swe:uom code="m"/>
+	                        <swe:value>-20</swe:value>
+	                    </swe:Quantity>
+	                </swe:coordinate>
+	            </swe:Vector>
+	        </sml:position>
+	    </sml:PhysicalSystem>
+	</swes:procedureDescription>
+	<!-- multiple values possible -->
+	<swes:observableProperty>icListen_wav_files_list</swes:observableProperty>
+	<swes:observableProperty>icListen_spectrum_files_list</swes:observableProperty>
+	<!--ADD_OBSERVABLE_PROPERTY-->
+	<swes:metadata>
+	    <sos:SosInsertionMetadata>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_CategoryObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_CountObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_TextObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_TruthObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_GeometryObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_SWEArrayObservation</sos:observationType>
+	        <!-- multiple values possible -->
+	        <sos:featureOfInterestType>http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingPoint</sos:featureOfInterestType>
+	    </sos:SosInsertionMetadata>
+	</swes:metadata>
+</swes:InsertSensor>
