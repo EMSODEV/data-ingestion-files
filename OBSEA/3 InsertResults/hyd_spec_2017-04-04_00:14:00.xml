@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:InsertResult xmlns:sos="http://www.opengis.net/sos/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="SOS" version="2.0.0"
+    xsi:schemaLocation="http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd">
+    <sos:template>250026bd-f33a-4261-aaed-cf0a5e0142bc_spectrogram_OBSEA_2016-12-01</sos:template>
+	<sos:resultValues>2017-04-04T00:14:00+00:00#/egim/hydrophone/spectrogram/2017/04/04/SBF1636_20170404_001400.txt@</sos:resultValues>
+</sos:InsertResult>

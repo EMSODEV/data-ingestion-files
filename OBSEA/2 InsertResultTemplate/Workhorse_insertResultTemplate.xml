@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:InsertResultTemplate service="SOS" version="2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:swes="http://www.opengis.net/swes/2.0"
+    xmlns:sos="http://www.opengis.net/sos/2.0"
+    xmlns:swe="http://www.opengis.net/swe/2.0"
+    xmlns:sml="http://www.opengis.net/sensorML/1.0.1"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:om="http://www.opengis.net/om/2.0"
+    xmlns:sams="http://www.opengis.net/samplingSpatial/2.0"
+    xmlns:sf="http://www.opengis.net/sampling/2.0"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sosInsertResultTemplate.xsd http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd  http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd">
+    <sos:proposedTemplate>
+        <!-- Before using this example, make sure that all preconditions are fulfilled, 
+            e.g. perform InsertSensor example. -->
+        <sos:ResultTemplate>
+            <swes:identifier>cbccdffb-047a-4e95-b633-6c4efd6eb2d6_OBSEA_2016-12-01</swes:identifier>
+            <swes:extension>
+                <!-- Identification of the EGIM node where the instrument is deployed  -->
+                <sml:attachedTo xlink:title= "emso.eu:deployment:EGIM_1:OBSEA:2016-12-01" xlink:href= "http://www.emso.eu/platform/EGIM"/>
+            </swes:extension>
+            <sos:offering>offering_cbccdffb-047a-4e95-b633-6c4efd6eb2d6</sos:offering>
+            <sos:observationTemplate>
+                <om:OM_Observation gml:id="sensor2obsTemplate">
+                    <om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation"/>
+                    <om:phenomenonTime nilReason="template"/>
+                    <om:resultTime nilReason="template"/>
+                    <om:procedure xlink:href="cbccdffb-047a-4e95-b633-6c4efd6eb2d6"/>
+                    <om:observedProperty xlink:href="workhorse_adcp_observations"/>
+                    <om:featureOfInterest>
+                        <sams:SF_SpatialSamplingFeature gml:id="OBSEA">
+                            <gml:identifier codeSpace="EMSO">http://www.emso.eu/site/OBSEA</gml:identifier>
+                            <gml:name>OBSEA Expandable Seafloor Observatory</gml:name>
+                            <sf:type xlink:href="http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingPoint"/>
+                            <sf:sampledFeature xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown"/>
+                            <sams:shape>
+                                <gml:Point gml:id="OBSEA_coordinates">									
+                                    <gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">41.182117 1.752567</gml:pos>
+                                </gml:Point>
+                            </sams:shape>
+                        </sams:SF_SpatialSamplingFeature>                                       
+                    </om:featureOfInterest>
+                    <om:result xsi:type="gml:ReferenceType" xlink:title="measurement"/>
+                </om:OM_Observation>
+            </sos:observationTemplate>
+            <sos:resultStructure>
+                <swe:DataRecord>
+                    <swe:field name="phenomenonTime">
+                        <swe:Time definition="http://www.opengis.net/def/property/OGC/0/PhenomenonTime">
+                            <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                        </swe:Time>
+                    </swe:field>
+                    <swe:field name="workhorse_adcp_data_container">
+                        <swe:DataRecord definition="workhorse_adcp_observations">
+                            <!-- ADCP Stream Header -->
+                            <swe:field name="sea_water_temperature">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/sea_water_temperature">
+                                    <swe:label>sea water temperature</swe:label>
+                                    <swe:uom code="degC" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UPAA" />
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="instrument_orientation">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/platform_orientation">
+                                    <swe:label>instrument orientation</swe:label>
+                                    <swe:uom code="degree_north" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/DEGN" />
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="instrument_pitch">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/platform_pitch">
+                                    <swe:label>instrument pitch</swe:label>
+                                    <swe:uom code="deg" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UAAA" />
+                                </swe:Quantity>
+                            </swe:field>
+                            <swe:field name="instrument_roll">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/platform_roll">
+                                    <swe:label>instrument roll</swe:label>
+                                    <swe:uom code="deg" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UAAA" />
+                                </swe:Quantity>
+                            </swe:field>
+							<swe:field name="eastward_sea_water_velocity_depth_20m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=20m">
+									<swe:label>eastward sea water velocity (depth 20m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_20m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=20m">
+									<swe:label>northward sea water velocity (depth 20m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_20m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=20m">
+									<swe:label>upward sea water velocity (depth 20m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_20m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=20m">
+									<swe:label>error velocity (depth 20m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_19m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=19m">
+									<swe:label>eastward sea water velocity (depth 19m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_19m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=19m">
+									<swe:label>northward sea water velocity (depth 19m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_19m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=19m">
+									<swe:label>upward sea water velocity (depth 19m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_19m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=19m">
+									<swe:label>error velocity (depth 19m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_18m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=18m">
+									<swe:label>eastward sea water velocity (depth 18m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_18m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=18m">
+									<swe:label>northward sea water velocity (depth 18m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_18m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=18m">
+									<swe:label>upward sea water velocity (depth 18m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_18m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=18m">
+									<swe:label>error velocity (depth 18m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_17m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=17m">
+									<swe:label>eastward sea water velocity (depth 17m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_17m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=17m">
+									<swe:label>northward sea water velocity (depth 17m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_17m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=17m">
+									<swe:label>upward sea water velocity (depth 17m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_17m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=17m">
+									<swe:label>error velocity (depth 17m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_16m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=16m">
+									<swe:label>eastward sea water velocity (depth 16m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_16m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=16m">
+									<swe:label>northward sea water velocity (depth 16m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_16m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=16m">
+									<swe:label>upward sea water velocity (depth 16m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_16m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=16m">
+									<swe:label>error velocity (depth 16m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_15m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=15m">
+									<swe:label>eastward sea water velocity (depth 15m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_15m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=15m">
+									<swe:label>northward sea water velocity (depth 15m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_15m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=15m">
+									<swe:label>upward sea water velocity (depth 15m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_15m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=15m">
+									<swe:label>error velocity (depth 15m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_14m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=14m">
+									<swe:label>eastward sea water velocity (depth 14m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_14m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=14m">
+									<swe:label>northward sea water velocity (depth 14m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_14m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=14m">
+									<swe:label>upward sea water velocity (depth 14m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_14m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=14m">
+									<swe:label>error velocity (depth 14m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_13m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=13m">
+									<swe:label>eastward sea water velocity (depth 13m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_13m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=13m">
+									<swe:label>northward sea water velocity (depth 13m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_13m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=13m">
+									<swe:label>upward sea water velocity (depth 13m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_13m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=13m">
+									<swe:label>error velocity (depth 13m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_12m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=12m">
+									<swe:label>eastward sea water velocity (depth 12m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_12m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=12m">
+									<swe:label>northward sea water velocity (depth 12m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_12m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=12m">
+									<swe:label>upward sea water velocity (depth 12m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_12m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=12m">
+									<swe:label>error velocity (depth 12m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_11m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=11m">
+									<swe:label>eastward sea water velocity (depth 11m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_11m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=11m">
+									<swe:label>northward sea water velocity (depth 11m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_11m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=11m">
+									<swe:label>upward sea water velocity (depth 11m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_11m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=11m">
+									<swe:label>error velocity (depth 11m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_10m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=10m">
+									<swe:label>eastward sea water velocity (depth 10m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_10m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=10m">
+									<swe:label>northward sea water velocity (depth 10m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_10m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=10m">
+									<swe:label>upward sea water velocity (depth 10m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_10m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=10m">
+									<swe:label>error velocity (depth 10m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_9m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=9m">
+									<swe:label>eastward sea water velocity (depth 9m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_9m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=9m">
+									<swe:label>northward sea water velocity (depth 9m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_9m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=9m">
+									<swe:label>upward sea water velocity (depth 9m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_9m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=9m">
+									<swe:label>error velocity (depth 9m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_8m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=8m">
+									<swe:label>eastward sea water velocity (depth 8m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_8m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=8m">
+									<swe:label>northward sea water velocity (depth 8m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_8m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=8m">
+									<swe:label>upward sea water velocity (depth 8m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_8m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=8m">
+									<swe:label>error velocity (depth 8m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_7m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=7m">
+									<swe:label>eastward sea water velocity (depth 7m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_7m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=7m">
+									<swe:label>northward sea water velocity (depth 7m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_7m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=7m">
+									<swe:label>upward sea water velocity (depth 7m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_7m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=7m">
+									<swe:label>error velocity (depth 7m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_6m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=6m">
+									<swe:label>eastward sea water velocity (depth 6m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_6m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=6m">
+									<swe:label>northward sea water velocity (depth 6m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_6m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=6m">
+									<swe:label>upward sea water velocity (depth 6m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_6m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=6m">
+									<swe:label>error velocity (depth 6m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_5m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=5m">
+									<swe:label>eastward sea water velocity (depth 5m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_5m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=5m">
+									<swe:label>northward sea water velocity (depth 5m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_5m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=5m">
+									<swe:label>upward sea water velocity (depth 5m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_5m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=5m">
+									<swe:label>error velocity (depth 5m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_4m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=4m">
+									<swe:label>eastward sea water velocity (depth 4m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_4m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=4m">
+									<swe:label>northward sea water velocity (depth 4m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_4m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=4m">
+									<swe:label>upward sea water velocity (depth 4m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_4m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=4m">
+									<swe:label>error velocity (depth 4m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_3m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=3m">
+									<swe:label>eastward sea water velocity (depth 3m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_3m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=3m">
+									<swe:label>northward sea water velocity (depth 3m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_3m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=3m">
+									<swe:label>upward sea water velocity (depth 3m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_3m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=3m">
+									<swe:label>error velocity (depth 3m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_2m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=2m">
+									<swe:label>eastward sea water velocity (depth 2m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_2m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=2m">
+									<swe:label>northward sea water velocity (depth 2m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_2m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=2m">
+									<swe:label>upward sea water velocity (depth 2m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_2m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=2m">
+									<swe:label>error velocity (depth 2m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+							<swe:field name="eastward_sea_water_velocity_depth_1m">                                           
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/eastward_sea_water_velocity?depth=1m">
+									<swe:label>eastward sea water velocity (depth 1m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="northward_sea_water_velocity_depth_1m">
+								<swe:Quantity definition="http://mmisw.org/ont/cf/parameter/northward_sea_water_velocity?depth=1m">
+									<swe:label>northward sea water velocity (depth 1m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+                            <swe:field name="upward_sea_water_velocity_depth_1m">
+                                <swe:Quantity definition="http://mmisw.org/ont/cf/parameter/upward_sea_water_velocity?depth=1m">
+									<swe:label>upward sea water velocity (depth 1m)</swe:label>
+                                    <swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>
+							<swe:field name="error_velocity_depth_1m">
+								<swe:Quantity definition="http://mmisw.org/ont/trdi/glossary/errorVelocity?depth=1m">
+									<swe:label>error velocity (depth 1m)</swe:label>
+									<swe:uom code="mm/s" xlink:href="http://vocab.nerc.ac.uk/collection/P06/current/UVCC" />
+								</swe:Quantity>
+							</swe:field>                          
+                        </swe:DataRecord>
+                    </swe:field>
+                </swe:DataRecord>
+            </sos:resultStructure>
+            <sos:resultEncoding>
+                <swe:TextEncoding tokenSeparator="#" blockSeparator="@"/>
+            </sos:resultEncoding>
+        </sos:ResultTemplate>
+    </sos:proposedTemplate>
+</sos:InsertResultTemplate>

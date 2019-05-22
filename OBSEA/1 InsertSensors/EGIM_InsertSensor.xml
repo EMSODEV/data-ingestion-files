@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swes:InsertSensor service="SOS" version="2.0.0"
+	xmlns:swes="http://www.opengis.net/swes/2.0"
+	xmlns:sos="http://www.opengis.net/sos/2.0"
+	xmlns:swe="http://www.opengis.net/swe/2.0"
+	xmlns:sml="http://www.opengis.net/sensorml/2.0"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:gco="http://www.isotc211.org/2005/gco"
+	xmlns:gmd="http://www.isotc211.org/2005/gmd" xsi:schemaLocation="http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sosInsertSensor.xsd   http://www.opengis.net/swes/2.0 http://schemas.opengis.net/swes/2.0/swes.xsd">
+	<swes:procedureDescriptionFormat>http://www.opengis.net/sensorml/2.0</swes:procedureDescriptionFormat>
+	<swes:procedureDescription>
+		<sml:PhysicalSystem gml:id="EGIM_Internal_Status_at_OBSEA">
+			<!--Unique identifier -->
+			<gml:identifier codeSpace="uniqueID">724e153b-a1af-47e7-8ffa-1f174620d5d8</gml:identifier>
+			<sml:identification>
+				<sml:IdentifierList>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0006/">
+							<sml:label>shortName</sml:label>
+							<sml:value>EGIM Internal Status</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0002/">
+							<sml:label>longName</sml:label>
+							<sml:value>EGIM Status</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0005/">
+							<sml:label>Serial number</sml:label>
+							<sml:value>1</sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier>
+						<sml:Term definition="http://vocab.nerc.ac.uk/collection/W07/current/IDEN0007/">
+							<sml:label>UUID</sml:label>
+							<sml:value>724e153b-a1af-47e7-8ffa-1f174620d5d8</sml:value>
+						</sml:Term>
+					</sml:identifier>
+				</sml:IdentifierList>
+			</sml:identification>
+			<sml:capabilities name="offerings">
+				<sml:CapabilityList>
+					<sml:capability name="offeringID">
+						<swe:Text definition="urn:ogc:def:identifier:OGC:offeringID">
+							<swe:label>EGIM internal status measurements</swe:label>
+							<swe:value>offering_emso.eu:deployment:EGIM_1:OBSEA:2016-12-01</swe:value>
+						</swe:Text>
+					</sml:capability>
+				</sml:CapabilityList>
+			</sml:capabilities>	
+			<sml:outputs>
+				<sml:OutputList>
+					<sml:output name="input_voltage">
+						<swe:Quantity definition="input_voltage">
+							<swe:identifier>TVOL</swe:identifier>
+							<swe:label>input voltage</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="mV" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="consumed_energy">
+						<swe:Quantity definition="consumed_energy">
+							<swe:identifier>TENE</swe:identifier>
+							<swe:label>consumed energy</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="mA*h" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="water_intrusion">
+						<swe:Quantity definition="water_intrusion">
+							<swe:identifier>TWAI</swe:identifier>
+							<swe:label>water intrusion</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="bool" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="input_current_slot_1">
+						<swe:Quantity definition="input_current_slot_1">
+							<swe:identifier>TCUR</swe:identifier>
+							<swe:label>input current (slot 1)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="mA" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_temperature_slot_1">
+						<swe:Quantity definition="internal_temperature_slot_1">
+							<swe:identifier>TTEM</swe:identifier>
+							<swe:label>internal temperature (slot 1)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="degC" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_pressure_slot_1">
+						<swe:Quantity definition="internal_pressure_slot_1">
+							<swe:identifier>TPRE</swe:identifier>
+							<swe:label>mbars</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="n/a" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="SD_card_remaining_capacity_slot_1">
+						<swe:Quantity definition="SD_card_remaining_capacity_slot_1">
+							<swe:identifier>TSDC</swe:identifier>
+							<swe:label>SD card remaining capacity (slot 1)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="kBytes" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="input_current_slot_2">
+						<swe:Quantity definition="input_current_slot_2">
+							<swe:identifier>TCUR</swe:identifier>
+							<swe:label>input current (slot 2)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="mA" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_temperature_slot_2">
+						<swe:Quantity definition="internal_temperature_slot_2">
+							<swe:identifier>TTEM</swe:identifier>
+							<swe:label>internal temperature (slot 2)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="degC" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_pressure_slot_2">
+						<swe:Quantity definition="internal_pressure_slot_2">
+							<swe:identifier>TPRE</swe:identifier>
+							<swe:label>mbars</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="n/a" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="SD_card_remaining_capacity_slot_2">
+						<swe:Quantity definition="SD_card_remaining_capacity_slot_2">
+							<swe:identifier>TSDC</swe:identifier>
+							<swe:label>SD card remaining capacity (slot 2)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="kBytes" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="input_current_slot_3">
+						<swe:Quantity definition="input_current_slot_3">
+							<swe:identifier>TCUR</swe:identifier>
+							<swe:label>input current (slot 3)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="mA" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_temperature_slot_3">
+						<swe:Quantity definition="internal_temperature_slot_3">
+							<swe:identifier>TTEM</swe:identifier>
+							<swe:label>internal temperature (slot 3)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="degC" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_pressure_slot_3">
+						<swe:Quantity definition="internal_pressure_slot_3">
+							<swe:identifier>TPRE</swe:identifier>
+							<swe:label>mbars</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="n/a" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="SD_card_remaining_capacity_slot_3">
+						<swe:Quantity definition="SD_card_remaining_capacity_slot_3">
+							<swe:identifier>TSDC</swe:identifier>
+							<swe:label>SD card remaining capacity (slot 3)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="kBytes" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="input_current_slot_4">
+						<swe:Quantity definition="input_current_slot_4">
+							<swe:identifier>TCUR</swe:identifier>
+							<swe:label>input current (slot 4)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="mA" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_temperature_slot_4">
+						<swe:Quantity definition="internal_temperature_slot_4">
+							<swe:identifier>TTEM</swe:identifier>
+							<swe:label>internal temperature (slot 4)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="degC" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_pressure_slot_4">
+						<swe:Quantity definition="internal_pressure_slot_4">
+							<swe:identifier>TPRE</swe:identifier>
+							<swe:label>mbars</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="n/a" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="SD_card_remaining_capacity_slot_4">
+						<swe:Quantity definition="SD_card_remaining_capacity_slot_4">
+							<swe:identifier>TSDC</swe:identifier>
+							<swe:label>SD card remaining capacity (slot 4)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="kBytes" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="input_current_slot_5">
+						<swe:Quantity definition="input_current_slot_5">
+							<swe:identifier>TCUR</swe:identifier>
+							<swe:label>input current (slot 5)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="mA" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_temperature_slot_5">
+						<swe:Quantity definition="internal_temperature_slot_5">
+							<swe:identifier>TTEM</swe:identifier>
+							<swe:label>internal temperature (slot 5)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="degC" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="internal_pressure_slot_5">
+						<swe:Quantity definition="internal_pressure_slot_5">
+							<swe:identifier>TPRE</swe:identifier>
+							<swe:label>mbars</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="n/a" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+					<sml:output name="SD_card_remaining_capacity_slot_5">
+						<swe:Quantity definition="SD_card_remaining_capacity_slot_5">
+							<swe:identifier>TSDC</swe:identifier>
+							<swe:label>SD card remaining capacity (slot 5)</swe:label>
+							<swe:nilValues>
+								<swe:NilValues>
+									<swe:nilValue reason="http://www.opengis.net/def/nil/OGC/0/inapplicable">n/a</swe:nilValue>
+								</swe:NilValues>
+							</swe:nilValues>
+							<swe:uom code="kBytes" xlink:href="n/a"/>
+						</swe:Quantity>
+					</sml:output>
+				</sml:OutputList>
+			</sml:outputs>
+			<sml:attachedTo xlink:title= "emso.eu:deployment:EGIM_1:OBSEA:2016-12-01" xlink:href= "http://www.emso.eu/platform/EGIM"/>
+	        <sml:position>
+				<swe:Vector referenceFrame="urn:ogc:def:crs:EPSG::4326">
+	                <swe:coordinate name="easting">
+	                    <swe:Quantity axisID="x">
+	                        <swe:uom code="degree"/>
+	                        <swe:value>1.752567</swe:value>
+	                    </swe:Quantity>
+	                </swe:coordinate>
+	                <swe:coordinate name="northing">
+	                    <swe:Quantity axisID="y">
+	                        <swe:uom code="degree"/>
+	                    	<swe:value>41.182117</swe:value>
+	                    </swe:Quantity>
+	                </swe:coordinate>
+	                <swe:coordinate name="altitude">
+	                    <swe:Quantity axisID="z">
+	                        <swe:uom code="m"/>
+	                        <swe:value>-20</swe:value>
+	                    </swe:Quantity>
+	                </swe:coordinate>
+	            </swe:Vector>
+	        </sml:position>
+	    </sml:PhysicalSystem>
+	</swes:procedureDescription>
+	<!-- multiple values possible -->
+	<swes:observableProperty>EGIM_status_observations</swes:observableProperty>
+	<swes:observableProperty>input_voltage</swes:observableProperty>
+	<swes:observableProperty>consumed_energy</swes:observableProperty>
+	<swes:observableProperty>water_intrusion</swes:observableProperty>
+	<swes:observableProperty>input_current_slot_1</swes:observableProperty>
+	<swes:observableProperty>internal_temperature_slot_1</swes:observableProperty>
+	<swes:observableProperty>internal_pressure_slot_1</swes:observableProperty>
+	<swes:observableProperty>SD_card_remaining_capacity_slot_1</swes:observableProperty>
+	<swes:observableProperty>input_current_slot_2</swes:observableProperty>
+	<swes:observableProperty>internal_temperature_slot_2</swes:observableProperty>
+	<swes:observableProperty>internal_pressure_slot_2</swes:observableProperty>
+	<swes:observableProperty>SD_card_remaining_capacity_slot_2</swes:observableProperty>
+	<swes:observableProperty>input_current_slot_3</swes:observableProperty>
+	<swes:observableProperty>internal_temperature_slot_3</swes:observableProperty>
+	<swes:observableProperty>internal_pressure_slot_3</swes:observableProperty>
+	<swes:observableProperty>SD_card_remaining_capacity_slot_3</swes:observableProperty>
+	<swes:observableProperty>input_current_slot_4</swes:observableProperty>
+	<swes:observableProperty>internal_temperature_slot_4</swes:observableProperty>
+	<swes:observableProperty>internal_pressure_slot_4</swes:observableProperty>
+	<swes:observableProperty>SD_card_remaining_capacity_slot_4</swes:observableProperty>
+	<swes:observableProperty>input_current_slot_5</swes:observableProperty>
+	<swes:observableProperty>internal_temperature_slot_5</swes:observableProperty>
+	<swes:observableProperty>internal_pressure_slot_5</swes:observableProperty>
+	<swes:observableProperty>SD_card_remaining_capacity_slot_5</swes:observableProperty>
+	<!--ADD_OBSERVABLE_PROPERTY-->
+	<swes:metadata>
+	    <sos:SosInsertionMetadata>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_CategoryObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_CountObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_TextObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_TruthObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_GeometryObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation</sos:observationType>
+	        <sos:observationType>http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_SWEArrayObservation</sos:observationType>
+	        <!-- multiple values possible -->
+	        <sos:featureOfInterestType>http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingPoint</sos:featureOfInterestType>
+	    </sos:SosInsertionMetadata>
+	</swes:metadata>
+</swes:InsertSensor>
