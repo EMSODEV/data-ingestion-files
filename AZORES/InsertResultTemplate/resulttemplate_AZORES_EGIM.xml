@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:InsertResultTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:swes="http://www.opengis.net/swes/2.0" xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:swe="http://www.opengis.net/swe/2.0" xmlns:sml="http://www.opengis.net/sensorML/1.0.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:om="http://www.opengis.net/om/2.0" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:sf="http://www.opengis.net/sampling/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" service="SOS" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sosInsertResultTemplate.xsd http://www.opengis.net/om/2.0 http://schemas.opengis.net/om/2.0/observation.xsd  http://www.opengis.net/samplingSpatial/2.0 http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd">
+    <sos:proposedTemplate>
+        <!-- Before using this example, make sure that all preconditions are fulfilled, 
+            e.g. perform InsertSensor example. -->
+        <sos:ResultTemplate>
+            <swes:identifier>c419e0c579d1381e6cdde44d69956532_AZORES_2017-7-12</swes:identifier>
+            <swes:extension>
+                <!-- Identification of the EGIM node where the instrument is deployed  -->
+                <sml:attachedTo xlink:title="emso.eu:deployment:EGIM_1:AZORES:2017-7-12" xlink:href="http://www.emso.eu/platform/EGIM"/>
+            </swes:extension>
+            <sos:offering>offering_c419e0c579d1381e6cdde44d69956532</sos:offering>
+            <sos:observationTemplate>
+                <om:OM_Observation gml:id="sensor2obsTemplate">
+                    <om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ComplexObservation"/>
+                    <om:phenomenonTime nilReason="template"/>
+                    <om:resultTime nilReason="template"/>
+                    <om:procedure xlink:href="c419e0c579d1381e6cdde44d69956532"/>
+                    <om:observedProperty xlink:href="EGIM_status_observations"/>
+                    <om:featureOfInterest>
+                        <sams:SF_SpatialSamplingFeature gml:id="AZORES">
+                            <gml:identifier codeSpace="">http://www.emso.eu/site/AZORES</gml:identifier>
+                            <gml:name>EMSO AZORES</gml:name>
+                            <sf:type xlink:href="http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingPoint"/>
+                            <sf:sampledFeature xlink:href="http://www.opengis.net/def/nil/OGC/0/unknown"/>
+                            <sams:shape>
+                                <gml:Point gml:id="AZORES_coordinates">									
+                                    <gml:pos srsName="http://www.opengis.net/def/crs/EPSG/0/4326">37.29 -32.27</gml:pos>
+                                </gml:Point>
+                            </sams:shape>
+                        </sams:SF_SpatialSamplingFeature>                                       
+                    </om:featureOfInterest>
+                    <om:result/>
+                </om:OM_Observation>
+            </sos:observationTemplate>
+            <sos:resultStructure>
+                <swe:DataRecord>
+                    <swe:field name="phenomenonTime">
+                        <swe:Time definition="http://www.opengis.net/def/property/OGC/0/PhenomenonTime">
+                            <swe:uom xlink:href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+                        </swe:Time>
+                    </swe:field>
+ 
+                <swe:field name="EGIM_status_observations_container"><swe:DataRecord definition="EGIM_status_observations"><swe:field name="input_voltage"><swe:Quantity definition="input_voltage"><swe:label>input voltage</swe:label><swe:uom code="mV" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="consumed_energy"><swe:Quantity definition="consumed_energy"><swe:label>consumed energy</swe:label><swe:uom code="mA*h" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="water_intrusion"><swe:Quantity definition="water_intrusion"><swe:label>water intrusion</swe:label><swe:uom code="bool" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="input_current_slot_8"><swe:Quantity definition="input_current_slot_8"><swe:label>input current (slot 8)</swe:label><swe:uom code="mA" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_temperature_slot_8"><swe:Quantity definition="internal_temperature_slot_8"><swe:label>internal temperature (slot 8)</swe:label><swe:uom code="degC" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_pressure_slot_8"><swe:Quantity definition="internal_pressure_slot_8"><swe:label>mbars</swe:label><swe:uom code="n/a" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="SD_card_remaining_capacity_slot_8"><swe:Quantity definition="SD_card_remaining_capacity_slot_8"><swe:label>SD card remaining capacity (slot 8)</swe:label><swe:uom code="kBytes" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="input_current_slot_9"><swe:Quantity definition="input_current_slot_9"><swe:label>input current (slot 9)</swe:label><swe:uom code="mA" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_temperature_slot_9"><swe:Quantity definition="internal_temperature_slot_9"><swe:label>internal temperature (slot 9)</swe:label><swe:uom code="degC" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_pressure_slot_9"><swe:Quantity definition="internal_pressure_slot_9"><swe:label>mbars</swe:label><swe:uom code="n/a" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="SD_card_remaining_capacity_slot_9"><swe:Quantity definition="SD_card_remaining_capacity_slot_9"><swe:label>SD card remaining capacity (slot 9)</swe:label><swe:uom code="kBytes" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="input_current_slot_10"><swe:Quantity definition="input_current_slot_10"><swe:label>input current (slot 10)</swe:label><swe:uom code="mA" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_temperature_slot_10"><swe:Quantity definition="internal_temperature_slot_10"><swe:label>internal temperature (slot 10)</swe:label><swe:uom code="degC" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_pressure_slot_10"><swe:Quantity definition="internal_pressure_slot_10"><swe:label>mbars</swe:label><swe:uom code="n/a" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="SD_card_remaining_capacity_slot_10"><swe:Quantity definition="SD_card_remaining_capacity_slot_10"><swe:label>SD card remaining capacity (slot 10)</swe:label><swe:uom code="kBytes" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="input_current_slot_11"><swe:Quantity definition="input_current_slot_11"><swe:label>input current (slot 11)</swe:label><swe:uom code="mA" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_temperature_slot_11"><swe:Quantity definition="internal_temperature_slot_11"><swe:label>internal temperature (slot 11)</swe:label><swe:uom code="degC" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_pressure_slot_11"><swe:Quantity definition="internal_pressure_slot_11"><swe:label>mbars</swe:label><swe:uom code="n/a" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="SD_card_remaining_capacity_slot_11"><swe:Quantity definition="SD_card_remaining_capacity_slot_11"><swe:label>SD card remaining capacity (slot 11)</swe:label><swe:uom code="kBytes" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="input_current_slot_15"><swe:Quantity definition="input_current_slot_15"><swe:label>input current (slot 15)</swe:label><swe:uom code="mA" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_temperature_slot_15"><swe:Quantity definition="internal_temperature_slot_15"><swe:label>internal temperature (slot 15)</swe:label><swe:uom code="degC" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="internal_pressure_slot_15"><swe:Quantity definition="internal_pressure_slot_15"><swe:label>mbars</swe:label><swe:uom code="n/a" xlink:href="n/a"/></swe:Quantity></swe:field><swe:field name="SD_card_remaining_capacity_slot_15"><swe:Quantity definition="SD_card_remaining_capacity_slot_15"><swe:label>SD card remaining capacity (slot 5)</swe:label><swe:uom code="kBytes" xlink:href="n/a"/></swe:Quantity></swe:field></swe:DataRecord></swe:field></swe:DataRecord>
+            </sos:resultStructure>
+            <sos:resultEncoding>
+                <swe:TextEncoding tokenSeparator="#" blockSeparator="@"/>
+            </sos:resultEncoding>
+        </sos:ResultTemplate>
+    </sos:proposedTemplate>
+</sos:InsertResultTemplate>
